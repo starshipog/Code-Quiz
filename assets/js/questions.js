@@ -1,4 +1,4 @@
-var startBtnEl = document.querySelector('#StartBtn')
+var startBtnEl = document.querySelector('.StartBtn')
 
 
 
@@ -52,12 +52,18 @@ var questions = [
 
 // add for loop to circle through questions
 // function to start game
-// function startGame() {
-//     for (var i = 0; i < questions.length; i++) {
-//         if 
-//     }
-// }
+// function displayQuestions(index)
+//     var allQuestions = document.querySelector(".questions");
 
+
+
+function startGame() {
+    for (var i = 0; i < questions.length; i++) {
+        console.log(questions[i]);
+        // var questionDisplay = document.querySelector('.questions');
+        // questionDisplay.textContent = [];
+    }
+}
 
 
 
