@@ -1,6 +1,6 @@
-var startBtnEl = document.querySelector('.StartBtn')
+var startBtnEl = document.getElementById('StartBtn')
 
-
+// document.getElementById('StartBtn'), since it is an ID
 
 
 var question1 = {
@@ -58,10 +58,16 @@ var questions = [
 
 
 function startGame() {
+
+    console.log('startGame')
+    // var questionElement = document.getElementById('questions');
+
+    // questionElement.innerText = questions[i].Questions; 
+
     for (var i = 0; i < questions.length; i++) {
         console.log(questions[i]);
-        // var questionDisplay = document.querySelector('.questions');
-        // questionDisplay.textContent = [];
+        var questionDisplay = document.querySelector('.questions');
+        questionDisplay.textContent = [];
     }
 }
 
@@ -74,6 +80,8 @@ function startGame() {
 
 // add event listener for start button
 startBtnEl.addEventListener("click", startGame);
+
+
 
 
 // // Attach event listener to start button to call startGame function on click
