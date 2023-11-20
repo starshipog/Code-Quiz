@@ -1,4 +1,6 @@
 var startBtnEl = document.getElementById('StartBtn')
+var currentQuestion = document.querySelector(".currentQuestion");
+var answer = document.querySelector(".answer");
 
 // document.getElementById('StartBtn'), since it is an ID
 
@@ -66,15 +68,41 @@ function startGame() {
 
     for (var i = 0; i < questions.length; i++) {
         console.log(questions[i]);
-        var questionDisplay = document.querySelector('.questions');
-        questionDisplay.textContent = [];
+        // var questionDisplay = document.querySelector('.questions');
+        // questionDisplay.textContent = [];
     }
 }
 
 
 
 
+var index = 0;
+function displayQuestions(){
+    var questionDisplay = document.querySelector('.questions');
+    var currentQuestion = questions[index]; 
+    
+    currentQuestion.textContent = currentQuestion.Question;
 
+    questionDisplay.append(currentQuestion)
+    
+    currentQuestion.answers.forEach(answer => {
+        //this loops through all of the answers from current question
+        // create elements like buttons, set each of their textcontent to answer
+        
+        answer.textContent = currentQuestion.answers;
+
+
+        // add eventlisteners for when the button is clicked to check if it is the correct answer
+
+        
+        // append elements to questionDisplay
+
+
+    });
+
+    // increment index at the end 
+    index ++
+}
 
 
 
