@@ -2,6 +2,7 @@ var startBtnEl = document.getElementById('StartBtn')
 var currentQuestion = document.querySelector(".currentQuestion");
 var answer = document.querySelector(".answer");
 
+
 // document.getElementById('StartBtn'), since it is an ID
 
 
@@ -58,7 +59,6 @@ var questions = [
 //     var allQuestions = document.querySelector(".questions");
 
 
-
 function startGame() {
 
     console.log('startGame')
@@ -71,6 +71,7 @@ function startGame() {
         // var questionDisplay = document.querySelector('.questions');
         // questionDisplay.textContent = [];
     }
+    displayQuestions()
 }
 
 
@@ -79,17 +80,17 @@ function startGame() {
 var index = 0;
 function displayQuestions(){
     var questionDisplay = document.querySelector('.questions');
-    var currentQuestion = questions[index]; 
+    var current = questions[index]; 
+    currentQuestion.textContent = current.Question;
     
-    currentQuestion.textContent = currentQuestion.Question;
+    // currentQuestion.textContent = currentQuestion.Question;
 
-    questionDisplay.append(currentQuestion)
     
-    currentQuestion.answers.forEach(answer => {
+    current.answers.forEach(answer => {
         //this loops through all of the answers from current question
         // create elements like buttons, set each of their textcontent to answer
         
-        answer.textContent = currentQuestion.answers;
+        answer.textContent = current.answers;
 
 
         // add eventlisteners for when the button is clicked to check if it is the correct answer
