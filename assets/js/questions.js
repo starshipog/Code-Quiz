@@ -13,27 +13,27 @@ var question1 = {
 };
 
 var question2 = {
-    question: "The condition in an if/else statemtn is enclose with _______.",
+    Question: "The condition in an if/else statemtn is enclose with _______.",
     answers: ["1.quotes", "2.curly brackets", "3. parenthesis", "4.square brackets"],
     correctAnswer: 3
 };
 
 var question3 = {
-    question: "Arrays in Javascript can be used to store ________.",
+    Question: "Arrays in Javascript can be used to store ________.",
     answers: ["1.numbers and strings", "2.other arrays", "3. booleans", "4.all of the above"],
     correctAnswer: 4
 };
 
 
 var question4 = {
-    question: "String values must be enclosed within ________ when being assigned to variables.",
+    Question: "String values must be enclosed within ________ when being assigned to variables.",
     answers: ["1.commas", "2.curly brackets ", "3. quotes", "4.parenthesis"],
     correctAnswer: 3
 };
 
 
 var question5 = {
-    question: "A very useful tool used during development and debugging for printing content to the debugger is:",
+    Question: "A very useful tool used during development and debugging for printing content to the debugger is:",
     answers: ["1.Javascript", "2.terminal/bash ", "3. for loops", "4.console.log"],
     correctAnswer: 4
 };
@@ -81,9 +81,11 @@ var index = 0;
 function displayQuestions(){
     var questionDisplay = document.querySelector('.questions');
     var current = questions[index]; 
-    currentQuestion.textContent = current.Question;
+    // currentQuestion.textContent = current.Question;
     
-    // currentQuestion.textContent = currentQuestion.Question;
+    currentQuestion.textContent = current;
+
+    
 
     
     current.answers.forEach(answer => {
@@ -95,7 +97,8 @@ function displayQuestions(){
 
         // add eventlisteners for when the button is clicked to check if it is the correct answer
 
-        
+        // answer.addEventListener("click", startGame);
+        // if(correctAnswer == true){}
         // append elements to questionDisplay
 
 
