@@ -71,7 +71,7 @@ function startGame() {
         // var questionDisplay = document.querySelector('.questions');
         // questionDisplay.textContent = [];
     }
-    displayQuestions()
+    displayQuestions(index)
 }
 
 
@@ -81,9 +81,9 @@ var index = 0;
 function displayQuestions(){
     var questionDisplay = document.querySelector('.questions');
     var current = questions[index]; 
-    // currentQuestion.textContent = current.Question;
+    currentQuestion.textContent = current.Question;
     
-    currentQuestion.textContent = current;
+    // currentQuestion.textContent = current;
 
     
 
@@ -92,20 +92,48 @@ function displayQuestions(){
         //this loops through all of the answers from current question
         // create elements like buttons, set each of their textcontent to answer
         
-        answer.textContent = current.answers;
+        // answer.textContent = current.answers;
+
+        var answerButton = document.createElement('button');
+        answerButton.textContent = currentAnswer;
 
 
         // add eventlisteners for when the button is clicked to check if it is the correct answer
+
+
+        answerButton.addEventListener("click", checkAnswer);
 
         // answer.addEventListener("click", startGame);
         // if(correctAnswer == true){}
         // append elements to questionDisplay
 
 
+        // Append button to questionDisplay or wherever you want to display it
+        questionDisplay.appendChild(answerButton);
+
+
     });
 
     // increment index at the end 
     index ++
+}
+
+
+
+
+function checkAnswer(event) {
+    var selectedAnswer = event.target.textContent;
+    var current = questions[index];
+    if (selectedAnswer === current.answers[current.correctAnswer - 1]) {
+        // Correct answer logic
+        selectedAnswer = true;
+    } else {
+        // Incorrect answer logic
+        selectedAnswer = false;
+    }
+    // Continue to the next question
+    index++;
+    displayQuestions(index);
 }
 
 
