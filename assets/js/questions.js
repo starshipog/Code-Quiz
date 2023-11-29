@@ -93,7 +93,7 @@ function displayQuestions(){
         // create elements like buttons, set each of their textcontent to answer
         
         // answer.textContent = current.answers;
-
+        var currentAnswer
         var answerButton = document.createElement('button');
         answerButton.textContent = currentAnswer;
 
