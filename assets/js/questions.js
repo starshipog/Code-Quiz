@@ -1,7 +1,7 @@
 var startBtnEl = document.getElementById('StartBtn')
 var currentQuestion = document.querySelector(".currentQuestion");
 var answer = document.querySelector(".answer");
-
+var choices = document.querySelector(".choices");
 
 // document.getElementById('StartBtn'), since it is an ID
 
@@ -78,48 +78,25 @@ function startGame() {
 
 
 var index = 0;
-function displayQuestions(){
-    var questionDisplay = document.querySelector('#questions');
-    var current = questions[index]; 
+function displayQuestions() {
+    var questionDisplay = document.querySelector("#questions");
+    var current = questions[index];
     currentQuestion.textContent = current.Question;
-    
-    // currentQuestion.textContent = current;
-
-    
-
-    
-    current.answers.forEach(answer => {
-        //this loops through all of the answers from current question
-        console.log('answer',answer)
-        // create elements like buttons, set each of their textcontent to answer
-        
-        // answer.textContent = current.answers;
-      
-        var answerButton = document.createElement('button');
-        // answerButton.textContent = currentAnswer;
-        // answerButton.textContent = answer;
-
-        var currentAnswer = answer
-
-        // add eventlisteners for when the button is clicked to check if it is the correct answer
-
-
-        answerButton.addEventListener("click", checkAnswer);
-
-        // answer.addEventListener("click", startGame);
-        // if(correctAnswer == true){}
-        // append elements to questionDisplay
-
-
-        // Append button to questionDisplay or wherever you want to display it
-        questionDisplay.appendChild(answerButton);
-
-
+    for (var i = 0; i < current.answers.length; i++) {
+      var answer = document.querySelector(`#answer${i}`);
+      answer.textContent = current.answers[i];
+    }
+    choices.addEventListener("click", (event) => {
+      var user_guess = event.target.innerText;
+      if (user_guess === current.answers[current.correctAnswer]) {
+        console.log("CORRECT");
+      } else {
+        console.log("WRONG");
+      }
+      index++;
+      displayQuestions();
     });
-
-    // increment index at the end 
-    index ++
-}
+  }
 
 
 
