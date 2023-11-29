@@ -79,7 +79,7 @@ function startGame() {
 
 var index = 0;
 function displayQuestions(){
-    var questionDisplay = document.querySelector('.questions');
+    var questionDisplay = document.querySelector('#questions');
     var current = questions[index]; 
     currentQuestion.textContent = current.Question;
     
@@ -90,13 +90,16 @@ function displayQuestions(){
     
     current.answers.forEach(answer => {
         //this loops through all of the answers from current question
+        console.log('answer',answer)
         // create elements like buttons, set each of their textcontent to answer
         
         // answer.textContent = current.answers;
-        var currentAnswer
+      
         var answerButton = document.createElement('button');
-        answerButton.textContent = currentAnswer;
+        // answerButton.textContent = currentAnswer;
+        // answerButton.textContent = answer;
 
+        var currentAnswer = answer
 
         // add eventlisteners for when the button is clicked to check if it is the correct answer
 
